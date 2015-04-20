@@ -24,6 +24,7 @@ public class Hangman extends ConsoleProgram {
     public void run() {
 
         canvas.reset();
+
         println("Welcome to Hangman!");
         String nextGuess = "";
         for (int i = 0; i < targetWord.length(); i++) {
@@ -84,6 +85,7 @@ public class Hangman extends ConsoleProgram {
 
                         } else if (UpperLetter != targetWord.charAt(i)) {
                             newstr = newstr + "-";
+
                         }
 
                     } else {
@@ -100,6 +102,7 @@ public class Hangman extends ConsoleProgram {
 
                 if (wrongGuess == true) {
                     println("There are no " + "\"" + UpperLetter + "'s\"" + "in the word.");
+                    canvas.noteIncorrectGuess(UpperLetter);
 
                 } else {
                     println("That guess is correct");
@@ -107,6 +110,7 @@ public class Hangman extends ConsoleProgram {
                 if (newstr.equals(targetWord)) {
                     println("You guessed the word: " + newstr);
                     println("You Win");
+                    canvas.displayWord(newstr);
                     playGame = false;
                 }
 
