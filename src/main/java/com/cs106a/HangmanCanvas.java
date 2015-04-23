@@ -53,9 +53,12 @@ public class HangmanCanvas extends GCanvas {
         int BodyY = HeadY + ROPE_LENGTH + HEAD_RADIUS * 2;
         int LegY2 = BodyY + BODY_LENGTH + LEG_LENGTH;
 
+        GRect wrongGuessBox = new GRect (250, 420, 87, 50);
+        add (wrongGuessBox);
+
         incorrectGuesses = incorrectGuesses + letter;
         incorrectGuessBox.setLabel(incorrectGuesses);
-        incorrectGuessBox.setLocation(200, 450);
+        incorrectGuessBox.setLocation(260, 450);
         add(incorrectGuessBox);
 
         countIncorrectGuesses = countIncorrectGuesses + 1;
@@ -108,6 +111,7 @@ public class HangmanCanvas extends GCanvas {
     String incorrectGuesses = "";
     GLabel incorrectGuessBox = new GLabel(incorrectGuesses);
     int countIncorrectGuesses = 0;
+
 
 
     GLabel guessWord = new GLabel("");
