@@ -12,6 +12,11 @@ import java.util.StringTokenizer;
  */
 public class CS106a extends ConsoleProgram {
 
+    public void run () {
+
+
+    }
+
 // Exercise Character Arithmetic
 // public char toHexDigit (int n) {
 //
@@ -108,8 +113,6 @@ public class CS106a extends ConsoleProgram {
 //    }
 //
 //    private static final String DELIMITERS = ("!,.?" );
-
-
 
     public static void main(String[] args) {
         new CS106a().start();
