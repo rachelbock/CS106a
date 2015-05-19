@@ -28,20 +28,27 @@ public class Yahtzee extends GraphicsProgram implements YahtzeeConstants {
     }
 
     private void playGame() {
-
-        int dice[] = new int[5];
-
         for (int i = 1; i < nPlayers; i++) {
             display.waitForPlayerToClickRoll(i);
+            firstRoll();
+            nextRolls();
 
-            for (int j = 0; j < dice.length; j++) {
-                int diceNumber = rgen.nextInt(1, 6);
-                dice[j] = diceNumber;
-            }
-            display.displayDice(dice);
+        }
+    }
 
 
-            for (int j = 0; j <= 2; j++) {
+    public void firstRoll() {
+
+        for (int j = 0; j < dice.length; j++) {
+            int diceNumber = rgen.nextInt(1, 6);
+            dice[j] = diceNumber;
+        }
+        display.displayDice(dice);
+    }
+
+
+    public void nextRolls() {
+        for (int j = 0; j < 2; j++) {
             display.waitForPlayerToSelectDice();
 
             for (int k = 0; k < dice.length; k++) {
@@ -51,15 +58,19 @@ public class Yahtzee extends GraphicsProgram implements YahtzeeConstants {
                 }
             }
             display.displayDice(dice);
-            }
-
         }
+        int category = display.waitForPlayerToSelectCategory();
+        int categoryList [] = new int [N_CATEGORIES];
+
+
     }
+
 
     /* Private instance variables */
     private int nPlayers;
     private String[] playerNames;
     private YahtzeeDisplay display;
     private RandomGenerator rgen = new RandomGenerator();
+    private int dice[] = new int[5];
 
 }
