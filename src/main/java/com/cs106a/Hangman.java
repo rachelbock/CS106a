@@ -13,6 +13,8 @@ import acm.util.*;
 
 import java.awt.*;
 
+
+
 public class Hangman extends ConsoleProgram {
 
     private static final int NGUESSES = 8;
