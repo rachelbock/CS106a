@@ -38,6 +38,7 @@ public class Yahtzee extends GraphicsProgram implements YahtzeeConstants {
 
             }
         }
+
     }
 
 
@@ -52,6 +53,8 @@ public class Yahtzee extends GraphicsProgram implements YahtzeeConstants {
 
 
     public void nextRolls(int player) {
+
+
         for (int j = 0; j < 2; j++) {
             display.waitForPlayerToSelectDice();
 
@@ -73,6 +76,7 @@ public class Yahtzee extends GraphicsProgram implements YahtzeeConstants {
 
     public int scoring(int category) {
         int score = 0;
+
         if (validation(category)) {
             if (category <= 6) {
                 int sum = 0;
@@ -82,21 +86,8 @@ public class Yahtzee extends GraphicsProgram implements YahtzeeConstants {
                     }
                 }
                 score = sum;
-            }
 
-//            if (category == THREE_OF_A_KIND) {
-//                int num = 0;
-//                int counterArray[] = new int[7];
-//                for (int i = 0; i < dice.length; i++) {
-//                counterArray[dice[i]] = counterArray[dice[i]] + 1;
-//            }
-//                for (int j = 0; j < counterArray.length; j++) {
-//                    if (counterArray[j] >=3) {
-//                        num = j * 3;
-//                    }
-//                }
-//                score = num;
-//            }
+            }
 
             if (category == THREE_OF_A_KIND) {
                 int sum = 0;
@@ -280,5 +271,17 @@ public class Yahtzee extends GraphicsProgram implements YahtzeeConstants {
     private RandomGenerator rgen = new RandomGenerator();
     private int dice[] = new int[]{5, 5, 5, 5, 4};
 
-
 }
+//            if (category == THREE_OF_A_KIND) {
+//                int num = 0;
+//                int counterArray[] = new int[7];
+//                for (int i = 0; i < dice.length; i++) {
+//                counterArray[dice[i]] = counterArray[dice[i]] + 1;
+//            }
+//                for (int j = 0; j < counterArray.length; j++) {
+//                    if (counterArray[j] >=3) {
+//                        num = j * 3;
+//                    }
+//                }
+//                score = num;
+//            }
