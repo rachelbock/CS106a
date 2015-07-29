@@ -1,7 +1,11 @@
 package com.cs106a;
 
 import acm.program.ConsoleProgram;
+import acm.program.GraphicsProgram;
 
+import java.awt.event.*;
+import javax.swing.*;
+import java.util.HashMap;
 import java.util.StringTokenizer;
 
 /**
@@ -12,10 +16,31 @@ import java.util.StringTokenizer;
  */
 public class CS106a extends ConsoleProgram {
 
-    public void run () {
+    public void run() {
+        HashMap<String, Integer> nameMap = new HashMap<String, Integer>();
 
+        while (true) {
+            String name = readLine("Enter Name: ");
+            if (name.length() == 0) {
+                break;
+            } else {
 
+                if (nameMap.containsKey(name)) {
+
+                    nameMap.put(name, nameMap.get(name) + 1);
+                }
+                else {
+                    nameMap.put (name, 1);
+                }
+
+            }
+
+        }
+        for (String key : nameMap.keySet()) {
+            println ("Entry " + key + " has count " + nameMap.get(key));
+        }
     }
+
 
 // Exercise Character Arithmetic
 // public char toHexDigit (int n) {
