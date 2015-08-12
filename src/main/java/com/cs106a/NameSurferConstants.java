@@ -29,4 +29,7 @@ public interface NameSurferConstants {
 /** The number of pixels to reserve at the top and bottom */
 	public static final int GRAPH_MARGIN_SIZE = 20;
 
+/** The length of the Text Field */
+	public static final int TEXT_FIELD_LENGTH = 20;
+
 }
